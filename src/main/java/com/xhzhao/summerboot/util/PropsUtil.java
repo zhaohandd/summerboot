@@ -29,7 +29,7 @@ public final class PropsUtil {
             props = new Properties();
             props.load(is);
         } catch (IOException e) {
-            logger.error("properties file load fail", e);
+            logger.error("properties file loads fail", e);
         }
         return props;
     }
@@ -43,10 +43,32 @@ public final class PropsUtil {
     public static String getString(Properties props, String key) {
         return getString(props, key, "");
     }
-    private static String getString(Properties props, String key, String defaultValue) {
+    public static String getString(Properties props, String key, String defaultValue) {
         String value = defaultValue;
         if (props.containsKey(key)) {
             value = props.getProperty(key);
+        }
+        return value;
+    }
+
+    public static int getInt(Properties props, String key) {
+        return getInt(props, key, 0);
+    }
+    public static int getInt(Properties props, String key, int defaultValue) {
+        int value = defaultValue;
+        if (props.containsKey(key)) {
+            value = CastUtil.castInt(props.getProperty(key));
+        }
+        return value;
+    }
+
+    public static boolean getBoolean(Properties props, String key) {
+        return getBoolean(props, key, false);
+    }
+    public static boolean getBoolean(Properties props, String key, Boolean defaultValue) {
+        boolean value = defaultValue;
+        if (props.containsKey(key)) {
+            value = CastUtil.castBoolean(props.getProperty(key));
         }
         return value;
     }

@@ -1,5 +1,7 @@
 package com.xhzhao.summerboot;
 
+import java.util.ArrayList;
+
 /**
  * provides configuration constants
  * @author xhzhao
@@ -16,18 +18,18 @@ public interface ConfigConstant {
 
     /**
      * basic package
-     * </
-     *  com.xhzhao.summerboot
-     *  />
+     * <pre>
+     *     com.xhzhao.summerboot
+     * </pre>
      */
-    String APP_BASE_PACKAGES = "summer.app.base_package";
+    String APP_BASE_PACKAGE = "summer.app.base_package";
     // basic path of jsp
     String APP_JSP_PATH = "summer.app.jsp_path";
     /**
      * basic pah of static resource
-     * </
-     *  JS CSS Image
-     *  />
+     * <pre>
+     *     JS CSS Image
+     * </pre>
       */
     String APP_ASSET_PATH = "summer.app.asset_path";
 }
