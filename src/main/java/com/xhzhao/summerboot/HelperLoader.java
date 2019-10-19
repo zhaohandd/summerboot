@@ -1,5 +1,6 @@
 package com.xhzhao.summerboot;
 
+import com.xhzhao.summerboot.helper.AopHelper;
 import com.xhzhao.summerboot.helper.BeanHelper;
 import com.xhzhao.summerboot.helper.ClassHelper;
 import com.xhzhao.summerboot.helper.ControllerHelper;
@@ -16,11 +17,12 @@ public final class HelperLoader {
                 BeanHelper.class,
                 ClassHelper.class,
                 ControllerHelper.class,
-                IocHelper.class
+                IocHelper.class,
+                AopHelper.class
         };
 
         for (Class<?> cls : classList) {
-            ClassUtil.loadClass(cls.getName(), false);
+            ClassUtil.loadClass(cls.getName(), true);
         }
     }
 }

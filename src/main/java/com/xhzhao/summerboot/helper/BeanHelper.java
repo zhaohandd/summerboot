@@ -32,4 +32,8 @@ public final class BeanHelper {
         }
         return (T) BASE_MAP.get(cls);
     }
+
+    public static void setBean(Class<?> cls, Object obj) {
+        BASE_MAP.put(cls, obj);
+    }
 }
